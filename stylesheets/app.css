@@ -99,7 +99,7 @@ html, body {
   white-space: nowrap;
   background: #000000;
   text-align: center;
-
+  -webkit-transition: transform 0.25s;
 }
 .b-gallery__preview-item {
   display: inline-block;
@@ -110,4 +110,13 @@ html, body {
   height: 100px;
   border: 2px solid transparent;
   cursor: pointer;
+}
+.b-gallery__preview-image_current {
+  border-color: #F0F0F0;
+}
+.hidden {
+  display: none;
+}
+.b-gallery__preview_hidden {
+  transform: translateY(100%);
 }

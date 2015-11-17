@@ -54,6 +54,7 @@ var
   
  function changeImage(index){
     if(index > -1 && index < images.length){
+	  movePreview(index-currentIndex);
       currentIndex = index;
       showImage(images[currentIndex]);
 	  setCurrentPreview(currentIndex);
@@ -80,7 +81,10 @@ var
     }
     items[index].classList.add(currentPreviewImageClass);
   }
-  
+   
+  function movePreview (delta){
+	 scrollPreview(delta*preview.clientHeight);
+  }
     function toggleArrows(index){
     if(index == 0){
       arrowLeft.classList.add('hidden');

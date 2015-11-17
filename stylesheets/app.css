@@ -33,6 +33,7 @@ html, body {
   width: 100%;
   height: 100%;
 }
+/*Стили для самой галереи*/
 .b-gallery {
   position: relative;
   min-height: 100%;
@@ -50,10 +51,45 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
+ transform: translate(-50%,-50%); /*центруем котиков*/
   max-width: 100%;
   max-height: 100%;
 }
-
+/*Стили для стрелок*/
+.b-gallery__arrow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  cursor: pointer;
+}
+.b-gallery__arrow::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ transform: translate(-50%, -50%); /*центруем стрелки*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 25px;
+  border-color: transparent;
+  content: '';
+}
+.b-gallery__arrow_right {
+  right: 0;
+}
+.b-gallery__arrow_right::after {
+  border-right-width: 0;
+  border-left-color: #F0F0F0;
+}
+.b-gallery__arrow_left {
+  left: 0;
+}
+.b-gallery__arrow_left::after {
+  border-left-width: 0;
+  border-right-color: #F0F0F0;
+}
+/*Стили для карусели*/
 .b-gallery__preview {
   position: absolute;
   bottom: 0;
